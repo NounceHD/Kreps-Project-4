@@ -12,6 +12,9 @@ public class Controller : MonoBehaviour
     [SerializeField] Door door3;
     [SerializeField] Platform4 platform4;
     [SerializeField] Door door4;
+    [SerializeField] Platform5 platform5A;
+    [SerializeField] Platform5 platform5B;
+    [SerializeField] Door door5;
 
     private void Update()
     {
@@ -30,5 +33,9 @@ public class Controller : MonoBehaviour
         // Level 4
         if (platform4.activated) door4.open = true;
         else door4.open = false;
+
+        // Level 5
+        if (!platform5A.activated && !platform5B.activated) door5.open = true;
+        else door5.open = false;
     }
 }

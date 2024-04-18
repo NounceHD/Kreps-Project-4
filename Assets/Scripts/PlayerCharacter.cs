@@ -10,7 +10,6 @@ public class PlayerCharacter : MonoBehaviour
     private float gravity = -9.8f;
     private bool onGround = true;
     public bool isAlive = true;
-    private Cube attach;
 
     void Update()
     {

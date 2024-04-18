@@ -20,5 +20,6 @@ public class Cube : MonoBehaviour
         transform.position = point - direction * 1.5f;
         if (point == new Vector3(0, 0, 0)) transform.position = startPos + direction * 2f;
         if (restrict == 1) transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Max(32,transform.position.z));
+        if (restrict == 2) transform.position = new Vector3(Mathf.Max(-32, transform.position.x), transform.position.y, transform.position.z);
     }
 }
