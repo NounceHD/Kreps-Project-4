@@ -19,6 +19,13 @@ public class Controller : MonoBehaviour
     [SerializeField] Platform6 platform6B;
     [SerializeField] Platform6 platform6C;
     [SerializeField] Door door6;
+    [SerializeField] Platform7 platform7A;
+    [SerializeField] Platform7 platform7B;
+    [SerializeField] Platform7 platform7C;
+    [SerializeField] Platform7 platform7D;
+    [SerializeField] Platform7 platform7E;
+    [SerializeField] Platform7 platform7F;
+    [SerializeField] Door door7;
 
     private void Update()
     {
@@ -45,5 +52,9 @@ public class Controller : MonoBehaviour
         // Level 6
         if (platform6A.activated && platform6B.activated && platform6C.activated) door6.open = true;
         else door6.open = false;
+
+        // Level 7
+        if (platform7A.activated && platform7B.activated && platform7C.activated && platform7D.activated && platform7E.activated && platform7F.activated) door7.open = true;
+        else door7.open = false;
     }
 }
