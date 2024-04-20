@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
+    [SerializeField] Cube blockingCube;
+
     private Vector3 velocity;
     private float speed = 6f;
     private float gravity = -9.8f;
@@ -61,5 +63,14 @@ public class PlayerCharacter : MonoBehaviour
         if (onGround && jump == 1) velocity.y = 4f;
         moveAmount += velocity;
         charCon.Move(moveAmount * Time.deltaTime);
+    }
+    public void Shot()
+    {
+        CharacterController charCon = GetComponent<CharacterController>();
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        charCon.enabled = false;
+        transform.position = new Vector3(-100, 14, 42);
+        charCon.enabled = true;
+        blockingCube.transform.position = new Vector3(-98, 13, 42);
     }
 }

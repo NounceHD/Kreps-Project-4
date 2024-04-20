@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Side1
   - Side2
+  - Ramp
   layers:
   - Default
   - TransparentFX
