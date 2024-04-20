@@ -10,11 +10,17 @@ public class Door : MonoBehaviour
     private Transform side1;
     private Transform side2;
 
-    public bool open = true;
+    public bool open = false;
     private float percentClosed = 100;
 
     private void Update()
     {
+        if ((open && percentClosed >= 100) || (!open && percentClosed <= 0))
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+        }
+
         if (orientation == 0)
         {
             if (open && percentClosed > 0) percentClosed -= speed * Time.deltaTime;

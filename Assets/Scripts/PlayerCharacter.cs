@@ -13,11 +13,16 @@ public class PlayerCharacter : MonoBehaviour
     private bool onGround = true;
     public bool isAlive = true;
 
+    private Cube previousCube;
+
     void Update()
     {
         if (!isAlive) return;
 
         Move();
+
+        if (previousCube) previousCube.Dettach();
+
         if (Input.GetAxis("Fire1") == 1)
         {
             GameObject camera = GameObject.FindWithTag("MainCamera");
@@ -33,6 +38,7 @@ public class PlayerCharacter : MonoBehaviour
             {
                 Cube cube = hitcube.collider.gameObject.GetComponent<Cube>();
                 cube.Attach(hit.point, startPos, direction);
+                previousCube = cube;
             }
         }
     }
@@ -66,6 +72,8 @@ public class PlayerCharacter : MonoBehaviour
     }
     public void Shot()
     {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Play();
         CharacterController charCon = GetComponent<CharacterController>();
         GameObject camera = GameObject.FindWithTag("MainCamera");
         charCon.enabled = false;

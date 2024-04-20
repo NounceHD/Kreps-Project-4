@@ -9,7 +9,12 @@ public class Platform3 : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Cube cube = collision.gameObject.GetComponent<Cube>();
-        if (cube.cubeNumber == 2) activated = true;
+        if (cube.cubeNumber == 2)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            activated = true;
+        };
     }
 
     private void OnCollisionExit(Collision collision)

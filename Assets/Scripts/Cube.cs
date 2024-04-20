@@ -9,8 +9,9 @@ public class Cube : MonoBehaviour
 
     public int cubeNumber = 0;
 
-    private void Update()
+    public void Dettach()
     {
+        Debug.Log("dettach");
         GetComponent<Rigidbody>().useGravity = true;
     }
 

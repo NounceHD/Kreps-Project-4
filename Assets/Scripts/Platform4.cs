@@ -16,7 +16,12 @@ public class Platform4 : MonoBehaviour
         if (cube.cubeNumber == 3) cubeblue = true;
         if (cube.cubeNumber == 4) cubered = true;
         if (cube.cubeNumber != 3 && cube.cubeNumber != 4) cubeother = true;
-        if (cubeblue && cubered && !cubeother) activated = true;
+        if (cubeblue && cubered && !cubeother)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            activated = true;
+        };
     }
 
     private void OnCollisionExit(Collision collision)
@@ -26,6 +31,11 @@ public class Platform4 : MonoBehaviour
         if (cube.cubeNumber == 3) cubeblue = false;
         if (cube.cubeNumber == 4) cubered = false;
         if (cube.cubeNumber != 3 && cube.cubeNumber != 4) cubeother = false;
-        if (cubeblue && cubered && !cubeother) activated = true;
+        if (cubeblue && cubered && !cubeother)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            activated = true;
+        };
     }
 }

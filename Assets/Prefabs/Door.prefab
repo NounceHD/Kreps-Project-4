@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9010292556864537418}
   - component: {fileID: 4713908375542910786}
-  - component: {fileID: 2221368451807543568}
+  - component: {fileID: 7585795352908404910}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -155,7 +155,7 @@ MonoBehaviour:
   speed: 50
   orientation: 0
   open: 0
---- !u!82 &2221368451807543568
+--- !u!82 &7585795352908404910
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,8 +165,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: d066322c3e9b2b84da57a10ab2be7207, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

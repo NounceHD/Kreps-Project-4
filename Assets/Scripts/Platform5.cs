@@ -9,7 +9,12 @@ public class Platform5 : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Scale scale = collision.gameObject.GetComponent<Scale>();
-        if (scale) activated = true;
+        if (scale)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            activated = true;
+        };
     }
 
     private void OnCollisionExit(Collision collision)

@@ -14,6 +14,8 @@ public class BulletShoot : MonoBehaviour
         if (canShoot)
         {
             StartCoroutine(Cooldown());
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
             GameObject bullet = Instantiate(bulletPrefab);
             Vector3 position = (Quaternion.Euler(angle) * Vector3.forward * 1.2f) + transform.position;
             bullet.transform.SetPositionAndRotation(position, Quaternion.Euler(angle));
